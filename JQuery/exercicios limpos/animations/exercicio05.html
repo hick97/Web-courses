@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title>
+        <style>
+            /* Div que será o campo de visualiazação do slider */
+            #principal{position: absolute; height: 200px; clip: rect(0 200px 200px 0);}
+			#janela { position:relative; height:200px; background-color:#069;top: 0; left: 0;}
+            /* Retirando espaçamento entre as imagens */
+            #janela img{float: left;}          
+            #info{position: absolute;top: 300px; color: #111;}
+
+		</style>
+        
+        <script src="jquery-3.2.1.min.js"></script>       
+        <script>
+            var limite;
+            //Fazendo um banner rotativo.
+            function moverFotos(){
+                $('#janela').animate({left:"-=200"},1000, function(e){
+                    // Div info foi utilizada par sober qual  ponto certo para voltar minha animação no caso aqui foi 800 (onde aparece minha "ultima foto").
+                    $('#info').html($('#janela').position().left);
+                    // Quando minha janela tiver na posição 800, meu left volta a ser 0;
+                    if($('#janela').position().left == -800){
+                        $('#janela').css("left", 0);
+                    }
+
+                });
+
+            }
+
+			$( function(e) {
+                // limite = numero de fotos * sua largura*-1 (já que a rotação é pra esquerda unidade negtiva);
+                limite = $('#janela img').lenght * $('#janela img').width()*-1;
+                //adicionando ultima foto na ultima posição.
+                 $('#janela').append('<img>');
+                 $('#janela img:last').attr('src', 'imagens/foto1.jpg');
+                //setInterval: a cada 2 segundos ele irá chamar a função mover fotos.
+                setInterval(moverFotos, 2000);
+	           
+			});
+
+		</script>        
+    </head>
+
+    <body>
+        <div id="principal">
+            <div id="janela">
+                <img src="imagens/foto1.jpg">
+                <img src="imagens/foto2.jpg">
+                <img src="imagens/foto3.jpg">
+                <img src="imagens/foto4.jpg">
+                <img src="imagens/foto5.jpg">
+                <!-- Técnica para repetir as fotos sem o usuário perceber (pode ser feito no jquery)
+                <img src="imagens/foto1.jpg">
+                -->
+            </div>
+        </div>
+        <div id="info"></div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title>
+        
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+        	$(function(){
+        		$('#cursohtml').click(function(){
+        			alert('cliclou no botao html');
+        		})
+        		//utilizando on preciso especificar qual o evento.
+        		$('#cursocss').on("click", function(){
+        			alert('cliclou no botao css');
+        		})
+        		function mostrarMensagem(){
+        			alert("passei o mouse no botao css");
+        			//matando processo para chamá-lo apenas uma vez.
+        			$('#cursocss').off("mouseover", mostrarMensagem);
+        			//Mata todos os eventos ligados ao elemento.
+        		//	$('#cursocss').off();
+
+
+        		}
+        		//mouseover: passar o mouse em cima
+        		$('#cursocss').on("mouseover", mostrarMensagem);
+
+        	});
+					
+		</script>        
+    </head>
+
+    <body>
+        <input type="button" id="cursohtml" value="Curso HTML5" />
+        <input type="button" id="cursocss" 	value="Curso CSS3" />
+        
+        
+    </body>
+
+</html>

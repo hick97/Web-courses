@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title>
+        <style>
+			#janela { position:absolute; width:300px; height:300px; background-color:#069;  }
+		</style>
+        
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+            
+			$( function(e) {			
+                $('#direita').on("click", {id:'#janela'}, moverParaDireita);
+			})
+            function moverParaDireita(e){
+
+                // realizando animações com animate.
+                //jquery documentation animate - Posso ver propriedades (linear/swing/etc)
+                //utilizando "-= ou += incrementa ou decrementa no valor antigo"
+                $(e.data.id).animate({left:"+=300", top:100}, 1000, "linear");
+            }
+
+		</script>        
+    </head>
+
+    <body>
+        <input type="button" id="direita" 	value="Mover p Direita" />
+        
+        <div id="janela"></div>
+    </body>
+
+</html>

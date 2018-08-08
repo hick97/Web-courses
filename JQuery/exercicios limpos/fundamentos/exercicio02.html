@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title> 
+    </head>
+
+    <body>
+    	<nav>
+        	<a href="#">Brasil</a>
+            <a href="#">Argentina</a>
+            <a href="#">Uruguai</a>
+            <a href="#">Chile</a>
+        </nav>
+        
+		<!-- scripts -->
+        <script src="jquery-3.2.1.min.js"></script>
+        <!--
+        <script src="teste.js" type="text/javascript">
+            //quantidade de elementos a no body o mesmo valeria para um ("nav a").lenght
+           // alert("Essa pagina contem"+ $("a").lenght + "links.");
+        </script>
+        -->
+        <script>    
+        	$( function() {
+                $("nav a:last").css("color", "red").css("texte-decoration", "none");
+                $("nav a:first").css("display", "block");
+                $("nav a:contains('Chile')").css("color", "blue");
+
+				
+			});
+        </script>   
+                
+    </body>
+</html>
