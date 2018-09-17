@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<title> Mapeando imgens </title>
+</head>
+<body>
+
+<img usemap="#imagem-mapeada" src="images/mapa.jpg" alt="Mapa" width="500">
+
+<map name="imagem-mapeada">
+	<!-- é possivel mapear na imagem regiões (triangulo, circulo, poligono) para fazer coisas especificas -->
+
+	<!-- Importante utilizar o photoshop para vê as coordenadas e criar uma elipse (metade da altura/largura da elipse será o raio do circulo) -->
+
+	<!-- Coords : pixel superior esquerdo/ pixel inferior direito -->
+	<area shape="rect" coords="30,30,150,150" href="https://www.google.com">
+	<!-- Coords : pixel que será o centro do círculo/ raio -->
+	<area shape="cicle" coords="20,20,35" href="#">
+	<!-- Coords : pegar todos os pontos das ligações no sentido horario (Exemplo: em um triangulo seria os vertices) -->
+	<area shape="poly" coords="" href="">
+</map>
+
+</body>
+</html>

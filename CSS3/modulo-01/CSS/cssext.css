@@ -1,0 +1,108 @@
+
+/* Asterisco é um seletor universal, mas perde prioridade para
+um seletor especificado */
+*{margin: 0;padding:0; color: red; }
+/* Seletor Tag */
+h1{color: green; font-size:40px; font-family: tahoma;}
+h2{color: red; font-size:40px; font-family: tahoma; text-align: center;}
+/* Seletor Atributo */
+/* O que está entre colchetes é o tipo do input que irei aplicar o estilo. */
+input[type="text"]{width: 200px; background-color: #ccc;}
+/* Agrupando seletores */
+h1,h2,p{color: green; font-size:40px; font-family: tahoma; text-align: center;}
+/* Trabalhando com classes - Posso usar em varios elementos*/
+.texto-principal {color: red; text-align: center;}
+.fundo-principal {background-color: green; padding: 20px;}
+/* Trabalhando com ID - É unico (apenas pode ser usado por 1 elemento)*/
+#conteudo {background-color: blue; padding: 20px; color: green;}
+/* Margin and padding */
+/* padding: se for dado varios valores ele seguirá a ordem horaria.
+-top
+-right
+-botom
+-left
+	Margin (Espaçamento externo) funciona da mesma maneira
+; */
+#exemplo { background-color: green; color: #fff; width: 500px; margin: ; padding: 10px 20px 30px 30px ;}
+/* Propriedades referentes ao texto:
+	- Color: define a cor do texto;
+	- text-align: Alinhamento (left, right, center, justify);
+	- text-decoration: Decoração (underline,overline,line-througt, none);
+	- text-transform: uppercase (maiusculas), lowercase(minuscuals), capitalize(primeira letra de cada palavra maius);
+	- text-ident: identação;
+	-line-height: altura das linhas;
+	- direction: direção do texto (rtl -righttoleft, ltr -lefttoright);
+	- letter-space: espaço entre as letras;
+	- word-space: espaçamento entre as palavras
+	- text-shadow(3px 3px 4px red;): sombra aparecer ao texto;
+; */
+/* Box sizing e Box shadow */
+/* Box sizing com border box resolve problema do padding que aumenta sua largura e altura de acordo
+com o tamanho do padding - 320/320 - */
+/* Box shadow: funciona mais ou menos como o text-shadow, porém para a box; */
+*{box-sizing: border-box;}
+#conteudo2 {background-color: red; width: 300px; padding: 20px; box-sizing: border-box; box-shadow: 10px 10px 5px green;}
+/* Overflow e opacity */
+/* Overflow: resolve problema causado por uma altura/largura menor q o texto
+	- visible : a parte q ultrapassa será visivel.
+	- hidden: a parte q ultrapassará será escondida/ Elementos pai conseguem acoplar elementos filhos
+	- scroll : adciona barra de rolagens (vertical/horizontal).
+	- auto: adiciona barra de rolagem apenas onde é necessário*/
+#conteudo3 {background-color: red; width: 300px; height: 50px; overflow: visible}
+/*opacity: nível de transparência (1=100%); */
+#conteudo p{opacity: 1;}
+/*border-radius(20px): arredonda a borda da div; */
+/* Fonts: 
+- Convenção:
+	*{font-size:100%;}
+	procura na ordem que aparece, caso n ache, vai pra proxima.
+	p{font-family: Times, "Times New Roman", serif; font-variant: samll-caps; font-weight: normal/bold(negrito); font-style:italic/normal/oblique; font-size: 1em(em=16px);}
+*/
+/* Fonte Face:
+	Trabalha com fontes externas (www.fontsquirrel.com), é preciso converter a fonte baixada
+	para um formato WEB (woff), o proprio site faz isso GENERATOR -> UPLOAD DA NOSSA FONTE -> DOWNLOAD DO KIT -> pego só o .woff.
+ */
+ @font-face {
+ 	font-family: open_sans;
+ 	src: url(NomeDoArquivo.woff);
+ }
+ p{font-size: 2.5em; font-family: open_sans;}
+ }
+ /* Fontes externas : Google Fonts 
+USE - pode acrescentar estilos
+pega o link e adciona ao html (link /href) e utiliza o font-family que já
+ta no site
+p{font-family: 'Arimo', sans-serif; font-size:2.5em;}
+ */
+ /* Colors */
+ #cores{width: 200px; height: 200px; background-color: NomesPredfinidos/codigosHexdecimal(photoshop)/rgba(230,89,225, opacidade)/hsl}
+/* Gradiente */
+#cores{width: 200px; height: 200px; background: linear-gradient(to right/left/top/ top left,red,blue);}
+#cores2{width: 200px; height: 200px; background: radial-gradient(to right/left/top/ top left,red,blue);}
+/* Float */
+#base{background-color: green; width: 600px; height: 600px;}
+#esquerda{background-color: red; width: 300px; height: 300px; float: left;}
+#direita{background-color: blue; width: 300px; height: 300px; float: right;}
+/* Clear */
+/* Indica que não será permitido nenhum elemento a sua esquerda/direita/both(ambos) */
+#conteudo{clear: left;}
+/* Position: define onde a div será posicionada;
+	-absolute: onde irá se posicionar de acordo com o 'relative' ou de acordo com a pag;
+ 	- relative: será tomado como referencia para o absolute;
+ 	- fixed: permanece fixo mesmo com a rolagem;
+ */
+#conteudo{width: 600px; height: 1200px; background-color: red; position: relative;}
+#texto{width: 500px;background-color: green; position: absolute;left: 0;top: 0; ou right: 0; bottom:0;}
+/* Border e Outline */
+#exemplo{border-style: dotted/dashed/solid/double/groove/ridge/inset/outset; border-width: 5px; border-color: red;}
+#exemplo{border:solid 5px red; outline: dotted 5px green;}
+/* Transition */
+/* hover: Ação que irá ocorrer ao passar o mouse por cima*/
+#exemplo{width: 200px; height: 200px; background-color: red; transition-property: width; transition-duration: 2s; transition-timing-function: ease/linear; transition-delay: 2s }
+#exemplo{width: 200px; height: 200px; background-color: red; transition: width 2s linear 1s, height 2s linear}
+#exemplo{width: 200px; height: 200px; background-color: red; transition: all 2s linear}
+#exemplo:hover{width: 350px;height: 350px;background-color: green;}
+/* Background */
+body{background-image: url(caminhoIMG); background-repeat: repeat-x/repeat-y/no-repeat; background-position: left/right/center; background-attachment: fixed; background-size: 100% 100% }
+body{background:url(caminho) center center/100% 100% no-repeat fixed; }
+/* ClearFix */

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title> Formularios - Parte II</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<!-- action: direciona qual pag eu vou enviar os dados/ formactio: permite que botoes distintos enviem o formulario para pags distintas/ o method pode ser distinto para cada botao usando formmethod e o mesmo vale para o enctype (formenctype)/ formnovalidate faz com que o botao nao faça validações -->
+<form id="form-cadastro" method="POST">
+Senha: <br>
+<input type="password" name="senha" autofocus><br>
+Email: <br>
+<input type="email" name="email" required autocomplete="off" placeholder="seuemail@.gmail.com"><br><br>
+<input type="submit" name="cadastrar" formtarget="_blank" formnovalidate formaction="cadastrar.php" value="Cadastrar">
+<input type="submit" name="enviar-por-email" formmethod="GET" formaction="enviar-por-email.php" value="Enviar por email">
+
+
+</form>
+<!-- Colocando um input que está fora do formulario, no formulario -->
+Nome:<br>
+<input type="name" name="nome" form="form-cadastro">
+
+
+
+</body>
+</html>

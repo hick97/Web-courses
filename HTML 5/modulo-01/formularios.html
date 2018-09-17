@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form action="cadastro.php" method="POST">
+
+<fieldset>
+<legend>Preencha os campos</legend><br>
+Nome: <br>
+<!--required deixa o campo obrigatório / autofocus: dá um foco em alguma input quando abrir a pag/ disable: desabilita um campo/ maxlenght: tamanho max de caracteres/ autocomplete: "on" habilita o auto preenchimento de um campo/ placeholder: evidencia o que colocar em um campo-->
+<input type="text" name="nome" required disabled ><br>
+Senha: <br>
+<input type="password" name="senha" autofocus><br>
+Email: <br>
+<input type="email" name="email" required autocomplete="off" placeholder="seuemail@.gmail.com"><br><br>
+Time: <br>
+<input type="radio" name="time" value="vasco"> Vasco <br>
+<input type="radio" name="time" value="vitoria" checked> Vitória <br>
+<input type="radio" name="time" value="bahia"> Bahia <br><br>
+
+Time: <br>
+<input type="checkbox" name="time" value="vasco"> Vasco <br>
+<input type="checkbox" name="time" value="vitoria" checked> Vitória <br>
+<input type="checkbox" name="time" value="bahia"> Bahia <br><br>
+
+Quantidade: <br>
+<input type="number" name="quantidade" min="0" max="500" step="10"><br><br>
+<input type="range" name="quantidade" min="5" max="45"><br><br>
+
+Cor: <br>
+<input type="color" name="cor"><br><br>
+
+Imagem: <br>
+<input type="file" name="imagem"><br><br>
+
+<!-- input invisivel (utilizado em programação (?)) -->
+<input type="hidden" name="id"><br>
+
+URL: <br>
+<input type="url" name="site"><br><br>
+
+Search: <br>
+<input type="search" name="pesquisa"><br><br>
+
+Telefone: <br>
+<input type="tel" name="telefone"><br><br>
+
+Data: <br>
+<input type="date" name="data" min="2000-12-31" max="2015-12-31"><br><br>
+
+Hora: <br>
+<input type="time" name="tempo"><br><br>
+
+Mês e ano: <br>
+<input type="month" name="mes"><br><br>
+
+Semana: <br>
+<input type="week" name="semana"><br><br>
+
+Data e hora: <br>
+<input type="datetime-local" name="data-e-hora"><br><br>
+
+Escolha seu veículo: <br>
+<select name="veiculo">
+
+<optgroup label="Carros">
+	<option value="camaro"> Camaro </option>
+	<option value="hilux" selected> Hilux </option>
+</optgroup>
+<optgroup label="Motos">
+	<option value="pop100"> Pop 100 </option>
+	<option value="zig-50"> Zig-50 </option>
+</optgroup>	
+
+</select><br><br>
+
+Escolha um curso: <br>
+<input name="cursos">
+	<datalist id="lista-cursos">
+		<option value="HTML5">
+		<option value="CSS3">
+		<option value="PHP">
+	</datalist>
+
+Mensagem: <br>
+<textarea name="mensage" rows="5" cols="30" spellcheck="true"></textarea><br><br>
+<button type="button"> Clique-me! </button>
+
+
+<input type="submit" name="btn-enviar" value="Enviar">
+
+</fieldset>
+
+	
+</form>
+
+
+</body>
+</html>
